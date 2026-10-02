@@ -1,0 +1,16 @@
+store-automation/
+├── api-gateway
+├── service-auth
+├── service-users
+├── service-customers
+├── service-products
+├── service-inventory
+├── service-orders
+├── service-payments
+├── service-sales
+├── service-notifications
+├── service-reports
+├── service-integrations
+├── discovery-server
+├── config-server
+└── docker-compose
