@@ -14,6 +14,9 @@
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="smart-sales-store.service-auth" options="-parameters" />
+      <module name="smart-sales-store.service-auth.main" options="-parameters" />
+      <module name="smart-sales-store.service-auth.test" options="-parameters" />
       <module name="smart-sales-store.service-user" options="-parameters" />
       <module name="smart-sales-store.service-user.main" options="-parameters" />
       <module name="smart-sales-store.service-user.test" options="-parameters" />

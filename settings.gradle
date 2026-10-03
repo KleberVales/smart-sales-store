@@ -1,3 +1,4 @@
 rootProject.name = 'smart-sales-store'
 
 include 'service-user'
+include 'service-auth'

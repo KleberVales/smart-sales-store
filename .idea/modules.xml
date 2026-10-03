@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/service-auth/smart-sales-store.service-auth.main.iml" filepath="$PROJECT_DIR$/.idea/modules/service-auth/smart-sales-store.service-auth.main.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/service-user/smart-sales-store.service-user.main.iml" filepath="$PROJECT_DIR$/.idea/modules/service-user/smart-sales-store.service-user.main.iml" />
     </modules>
   </component>
