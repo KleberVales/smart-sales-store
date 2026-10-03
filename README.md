@@ -347,3 +347,26 @@ The main areas of study include:
 * Event-driven architecture
 * Distributed systems
 
+---
+
+### ✉️ Contact
+
+LinkedIn
+Email
+
+### Kleber Vales
+
+**Java & Spring Software Engineer**
+
+| Cloud | DevOps | Architectures | Generative AI | Methodologies |
+
+🎓 **Bachelor's Degree in Computer Science**  
+🎓 **MBA in Web Software Development**
+
+**Certifications**  
+🏆 **Oracle Certified Associate – Java SE 7 Programmer**  
+🏆 **Microsoft MTA – Software Development Fundamentals**  
+🏆 **Scrum Fundamentals Certified (SFC™)**  
+🏆 **Oracle Cloud Infrastructure 2025 – DevOps Professional**  
+🏆 **Oracle Cloud Infrastructure 2025 – Generative AI Professional**  
+🏆 **Agentic AI Certified Fundations Associate**
