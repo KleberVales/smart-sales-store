@@ -52,4 +52,19 @@ public class RegisterUserService
                 savedUser.getEmail()
         );
     }
+
+    @Override
+    public UserResult getUserByEmail(String email) {
+
+        var user = userRepository.findByEmail(email)
+                .orElseThrow(() ->
+                        new RuntimeException("User not found"));
+
+        return new UserResult(
+                user.getId(),
+                user.getName(),
+                user.getEmail(),
+                user.getPassword()
+        );
+    }
 }
