@@ -25,7 +25,7 @@ public class SecurityConfig {
                         .pathMatchers("/actuator/**").permitAll()
                         .pathMatchers("/fallback/**").permitAll()
                         .pathMatchers("/fallback/**").permitAll()
-                        .pathMatchers("/api/nutrition/meal").permitAll()
+                        .pathMatchers("/api/users").permitAll()
                         .anyExchange().authenticated()
                 )
                 .build();
