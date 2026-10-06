@@ -1,8 +1,8 @@
 What was done:
-- 
+- Creating the Dockerfile for each microservice and docker compose in root
 
 What I will do:
-- 
+- run all and see work
 
 Obstacles:
 - None
