@@ -21,7 +21,7 @@ public class GatewayConfig {
                                 .retry(config -> config
                                         .setRetries(3)
                                         .setStatuses(HttpStatus.SERVICE_UNAVAILABLE)))
-                        .uri("http://localhost:8081"))
+                        .uri("http://service-auth:8081"))
 
                 .route("service-user", r -> r
                         .path("/api/users/**")
@@ -29,7 +29,7 @@ public class GatewayConfig {
                                 .circuitBreaker(config -> config
                                         .setName("userServiceCB")
                                         .setFallbackUri("forward:/fallback/users")))
-                        .uri("http://localhost:8082"))
+                        .uri("http://service-user:8082"))
                 .build();
     }
 }
