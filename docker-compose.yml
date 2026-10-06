@@ -1,0 +1,81 @@
+version: '3.8'
+
+services:
+
+  # Banco de Dados do service-user
+  user-db:
+    image: postgres:16-alpine
+    container_name: user-db
+    environment:
+      POSTGRES_DB: user_db
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgrespassword
+    ports:
+      - "5432:5432"
+    volumes:
+      - user_db_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres -d user_db"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+    networks:
+      - smart-sales-net
+
+  # Microsserviço de Usuários
+  service-user:
+    build:
+      context: ./service-user
+      dockerfile: Dockerfile
+    container_name: service-user
+    ports:
+      - "8082:8082"
+    environment:
+      - SPRING_DATASOURCE_URL=jdbc:postgresql://user-db:5432/user_db
+      - SPRING_DATASOURCE_USERNAME=user_service
+      - SPRING_DATASOURCE_PASSWORD=123456
+      - SPRING_JPA_HIBERNATE_DDL_AUTO=update
+    depends_on:
+      user-db:
+        condition: service_healthy
+    networks:
+      - smart-sales-net
+
+  # Microsserviço de Autenticação
+  service-auth:
+    build:
+      context: ./service-auth
+      dockerfile: Dockerfile
+    container_name: service-auth
+    ports:
+      - "8081:8081"
+    environment:
+      - SERVICE_USER_URL=http://service-user:8082
+    depends_on:
+      - service-user
+    networks:
+      - smart-sales-net
+
+  # API Gateway
+  api-gateway:
+    build:
+      context: ./api-gateway
+      dockerfile: Dockerfile
+    container_name: api-gateway
+    ports:
+      - "8080:8080"
+    environment:
+      - AUTH_SERVICE_URL=http://service-auth:8081
+      - USER_SERVICE_URL=http://service-user:8082
+    depends_on:
+      - service-auth
+      - service-user
+    networks:
+      - smart-sales-net
+
+networks:
+  smart-sales-net:
+    driver: bridge
+
+volumes:
+  user_db_data:
