@@ -1,5 +1,6 @@
 What was done:
 - run with docker compose
+- I fixed the URLs and database configurations in Docker Compose.
 
 What I will do:
 -
