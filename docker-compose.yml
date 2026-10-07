@@ -2,27 +2,27 @@ version: '3.8'
 
 services:
 
-  # Banco de Dados do service-user
+  # service-user database
   user-db:
     image: postgres:16-alpine
     container_name: user-db
     environment:
       POSTGRES_DB: user_db
-      POSTGRES_USER: postgres
-      POSTGRES_PASSWORD: postgrespassword
+      POSTGRES_USER: user_service
+      POSTGRES_PASSWORD: 123456
     ports:
       - "5432:5432"
     volumes:
       - user_db_data:/var/lib/postgresql/data
     healthcheck:
-      test: ["CMD-SHELL", "pg_isready -U postgres -d user_db"]
+      test: ["CMD-SHELL", "pg_isready -U user_service -d user_db"]
       interval: 5s
       timeout: 5s
       retries: 5
     networks:
       - smart-sales-net
 
-  # Microsserviço de Usuários
+  # Users microsservice
   service-user:
     build:
       context: ./service-user
@@ -41,7 +41,7 @@ services:
     networks:
       - smart-sales-net
 
-  # Microsserviço de Autenticação
+  # Autentication microservices
   service-auth:
     build:
       context: ./service-auth
