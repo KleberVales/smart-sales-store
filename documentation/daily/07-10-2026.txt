@@ -1,0 +1,8 @@
+What was done:
+- run with docker compose
+
+What I will do:
+-
+
+Obstacles:
+- None
