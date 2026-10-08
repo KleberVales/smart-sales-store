@@ -1,0 +1,20 @@
+
+frontend
+└── smart-sales-web
+    └── src/
+        ├── components/
+        │   ├── layout/
+        │   │   ├── Sidebar.tsx
+        │   │   ├── Header.tsx
+        │   │   └── AppLayout.tsx
+        │   └── dashboard/
+        │       ├── MetricCard.tsx
+        │       └── RecentSales.tsx
+        ├── pages/
+        │   ├── DashboardPage.tsx
+        │   ├── ProductsPage.tsx
+        │   └── CustomersPage.tsx
+        ├── services/
+        │   └── api.ts
+        ├── App.tsx
+        └── main.tsx
