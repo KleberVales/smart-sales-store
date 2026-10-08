@@ -22,9 +22,9 @@ public class FallbackController {
         return Mono.just(createFallbackResponse("User Service is currently unavailable"));
     }
 
-    @GetMapping("/nutrition")
+    @GetMapping("/customers")
     public Mono<Map<String, Object>> nutritionFallback() {
-        return Mono.just(createFallbackResponse("Nutrition Service is currently unavailable"));
+        return Mono.just(createFallbackResponse("Customers Service is currently unavailable"));
     }
 
     private Map<String, Object> createFallbackResponse(String message) {

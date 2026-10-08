@@ -26,6 +26,7 @@ public class SecurityConfig {
                         .pathMatchers("/fallback/**").permitAll()
                         .pathMatchers("/fallback/**").permitAll()
                         .pathMatchers("/api/users").permitAll()
+                        .pathMatchers("/api/customers").permitAll()
                         .anyExchange().authenticated()
                 )
                 .build();
