@@ -30,7 +30,6 @@ public class CreateCustomerUseCase {
         }
 
         Customer customer = new Customer(
-                null,
                 request.name(),
                 request.cpf(),
                 request.email(),

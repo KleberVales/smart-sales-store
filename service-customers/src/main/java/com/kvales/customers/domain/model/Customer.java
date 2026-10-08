@@ -19,14 +19,12 @@ public class Customer {
     private LocalDateTime updatedAt;
 
     public Customer(
-            Long id,
             String name,
             String cpf,
             String email,
             String phone,
             LocalDate birthDate
     ) {
-        this.id = id;
         this.name = name;
         this.cpf = cpf;
         this.email = email;
@@ -61,5 +59,32 @@ public class Customer {
 
     public boolean isActive() {
         return this.status == CustomerStatus.ACTIVE;
+    }
+
+    public static Customer restore(
+            Long id,
+            String name,
+            String cpf,
+            String email,
+            String phone,
+            LocalDate birthDate,
+            CustomerStatus status,
+            LocalDateTime createdAt,
+            LocalDateTime updatedAt
+    ) {
+        Customer customer = new Customer(
+                name,
+                cpf,
+                email,
+                phone,
+                birthDate
+        );
+
+        customer.id = id;
+        customer.status = status;
+        customer.createdAt = createdAt;
+        customer.updatedAt = updatedAt;
+
+        return customer;
     }
 }
