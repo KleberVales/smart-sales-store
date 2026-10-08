@@ -1,0 +1,48 @@
+service-customers/
+└── src/
+    └── main/
+        ├── java/
+        │   └── com/store/customers/
+        │       │
+        │       ├── domain/
+        │       │   ├── model/
+        │       │   │   └── Customer.java
+        │       │   │
+        │       │   ├── exception/
+        │       │   │   ├── CustomerNotFoundException.java
+        │       │   │   └── CustomerAlreadyExistsException.java
+        │       │   │
+        │       │   └── repository/
+        │       │       └── CustomerRepository.java
+        │       │
+        │       ├── application/
+        │       │   ├── usecase/
+        │       │   │   ├── CreateCustomerUseCase.java
+        │       │   │   ├── FindCustomerUseCase.java
+        │       │   │   ├── UpdateCustomerUseCase.java
+        │       │   │   └── DeleteCustomerUseCase.java
+        │       │   │
+        │       │   └── dto/
+        │       │       ├── CreateCustomerRequest.java
+        │       │       ├── UpdateCustomerRequest.java
+        │       │       └── CustomerResponse.java
+        │       │
+        │       ├── adapter/
+        │       │   ├── in/
+        │       │   │   └── web/
+        │       │   │       ├── CustomerController.java
+        │       │   │       └── CustomerExceptionHandler.java
+        │       │   │
+        │       │   └── out/
+        │       │       └── persistence/
+        │       │           ├── CustomerEntity.java
+        │       │           ├── JpaCustomerRepository.java
+        │       │           └── CustomerRepositoryAdapter.java
+        │       │
+        │       └── CustomerApplication.java
+        │
+        └── resources/
+            ├── application.properties
+            └── db/
+                └── migration/
+                    └── V1__create_customers.sql
