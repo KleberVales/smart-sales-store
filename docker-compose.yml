@@ -73,9 +73,49 @@ services:
     networks:
       - smart-sales-net
 
+    # database do service-customers
+  customers-db:
+    image: postgres:16-alpine
+    container_name: customers-db
+    environment:
+      POSTGRES_DB: customers_db
+      POSTGRES_USER: customers_service
+      POSTGRES_PASSWORD: 123456
+    ports:
+      - "5433:5432"
+    volumes:
+      - customers_db_data:/var/lib/postgresql/data
+    healthcheck:
+      test: [ "CMD-SHELL", "pg_isready -U customers_service -d customers_db" ]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+    networks:
+      - smart-sales-net
+
+    # microsserviço de clientes
+  service-customers:
+    build:
+      context: ./service-customers
+      dockerfile: Dockerfile
+    container_name: service-customers
+    ports:
+      - "8083:8083"
+    environment:
+      - SPRING_DATASOURCE_URL=jdbc:postgresql://customers-db:5432/customers_db
+      - SPRING_DATASOURCE_USERNAME=customers_service
+      - SPRING_DATASOURCE_PASSWORD=123456
+      - SPRING_JPA_HIBERNATE_DDL_AUTO=update
+    depends_on:
+      customers-db:
+        condition: service_healthy
+    networks:
+      - smart-sales-net
+
 networks:
   smart-sales-net:
     driver: bridge
 
 volumes:
   user_db_data:
+  customers_db_data:
