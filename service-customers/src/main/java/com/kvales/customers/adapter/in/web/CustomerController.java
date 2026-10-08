@@ -27,6 +27,7 @@ public class CustomerController {
             @RequestBody CreateCustomerRequest request
     ) {
 
+
         CustomerResponse response =
                 createCustomerUseCase.execute(request);
 

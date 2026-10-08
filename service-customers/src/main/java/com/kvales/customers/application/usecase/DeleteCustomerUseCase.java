@@ -5,7 +5,9 @@ import com.kvales.customers.domain.exception.CustomerNotFoundException;
 import com.kvales.customers.domain.model.Customer;
 import com.kvales.customers.domain.repository.CustomerRepository;
 import lombok.RequiredArgsConstructor;
+import org.springframework.stereotype.Service;
 
+@Service
 @RequiredArgsConstructor
 public class DeleteCustomerUseCase {
 
