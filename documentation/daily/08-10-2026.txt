@@ -1,0 +1,9 @@
+What was done:
+- create domain learn in service-customer
+- create application learn in service-customer
+
+What I will do:
+-
+
+Obstacles:
+- None
