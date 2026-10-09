@@ -45,7 +45,9 @@ store-automation/
 ├── service-notifications
 ├── service-reports
 ├── service-integrations
-
+├── discovery-server
+├── config-server
+└── docker-compose
 
 ```
 
