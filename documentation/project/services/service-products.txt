@@ -1,0 +1,60 @@
+
+service-products/
+├── src/
+│   ├── main/
+│   │   ├── java/
+│   │   │   └── com/
+│   │   │       └── kvales/
+│   │   │           └── products/
+│   │   │               ├── ServiceProductsApplication.java
+│   │   │               │
+│   │   │               ├── domain/
+│   │   │               │   ├── model/
+│   │   │               │   │   └── Product.java
+│   │   │               │   └── exception/
+│   │   │               │       └── ProductNotFoundException.java
+│   │   │               │
+│   │   │               ├── application/
+│   │   │               │   ├── port/
+│   │   │               │   │   ├── in/
+│   │   │               │   │   │   ├── CreateProductUseCase.java
+│   │   │               │   │   │   ├── FindProductByIdUseCase.java
+│   │   │               │   │   │   ├── FindAllProductsUseCase.java
+│   │   │               │   │   │   └── UpdateProductUseCase.java
+│   │   │               │   │   └── out/
+│   │   │               │   │       └── ProductRepositoryPort.java
+│   │   │               │   └── service/
+│   │   │               │       └── ProductService.java
+│   │   │               │
+│   │   │               └── adapter/
+│   │   │                   ├── in/
+│   │   │                   │   └── web/
+│   │   │                   │       ├── ProductController.java
+│   │   │                   │       ├── request/
+│   │   │                   │       │   ├── CreateProductRequest.java
+│   │   │                   │       │   └── UpdateProductRequest.java
+│   │   │                   │       ├── response/
+│   │   │                   │       │   └── ProductResponse.java
+│   │   │                   │       └── handler/
+│   │   │                   │           └── GlobalExceptionHandler.java
+│   │   │                   │
+│   │   │                   └── out/
+│   │   │                       └── persistence/
+│   │   │                           ├── ProductEntity.java
+│   │   │                           ├── ProductJpaRepository.java
+│   │   │                           └── ProductRepositoryAdapter.java
+│   │   │
+│   │   └── resources/
+│   │       └── application.properties
+│   │
+│   └── test/
+│       └── java/
+│           └── com/kvales/products/
+│               ├── domain/
+│               ├── application/
+│               └── adapter/
+│
+├── Dockerfile
+├── .dockerignore
+├── .gitignore
+└── pom.xml
