@@ -42,6 +42,8 @@ The current project structure includes:
 ```text
 smart-sales-store
 └── service-user
+├── service-auth
+
 ```
 
 Additional services can be introduced as independent modules without coupling their implementation to the existing services.
