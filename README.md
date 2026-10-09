@@ -34,17 +34,10 @@ The repository uses a **Gradle multi-module structure**, allowing new services t
 ```text
 store-automation/
 ├── api-gateway
-
-```
-
-The current project structure includes:
-
-```text
-smart-sales-store
-└── service-user
 ├── service-auth
 ├── service-users
-
+├── service-customers
+├── service-products
 
 ```
 
