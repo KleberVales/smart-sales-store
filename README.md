@@ -38,6 +38,8 @@ store-automation/
 ├── service-users
 ├── service-customers
 ├── service-products
+├── service-inventory
+├── service-orders
 
 ```
 
