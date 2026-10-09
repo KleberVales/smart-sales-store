@@ -41,6 +41,11 @@ store-automation/
 ├── service-inventory
 ├── service-orders
 ├── service-payments
+├── service-sales
+├── service-notifications
+├── service-reports
+├── service-integrations
+
 
 ```
 
