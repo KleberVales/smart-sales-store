@@ -43,6 +43,8 @@ The current project structure includes:
 smart-sales-store
 └── service-user
 ├── service-auth
+├── service-users
+
 
 ```
 
