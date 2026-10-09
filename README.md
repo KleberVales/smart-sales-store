@@ -32,29 +32,23 @@ The project is designed to explore concepts commonly used in production backend 
 The repository uses a **Gradle multi-module structure**, allowing new services to be added independently as the system grows.
 
 ```text
-smart-sales-store/
-│
-├── documentation/
-│   └── project/
-│
-├── service-user/
-│   └── src/
-│
-├── gradle/
-│   └── wrapper/
-│
-├── build.gradle
-├── settings.gradle
-├── gradlew
-├── gradlew.bat
-└── README.md
-```
+store-automation/
+├── api-gateway
+├── service-auth
+├── service-users
+├── service-customers
+├── service-products
+├── service-inventory
+├── service-orders
+├── service-payments
+├── service-sales
+├── service-notifications
+├── service-reports
+├── service-integrations
+├── discovery-server
+├── config-server
+└── docker-compose
 
-The current project structure includes:
-
-```text
-smart-sales-store
-└── service-user
 ```
 
 Additional services can be introduced as independent modules without coupling their implementation to the existing services.
