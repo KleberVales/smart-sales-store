@@ -22,7 +22,10 @@ services:
     networks:
       - smart-sales-net
 
-  # Users microsservice
+
+
+
+  # Users microservice
   service-user:
     build:
       context: ./service-user
@@ -41,7 +44,8 @@ services:
     networks:
       - smart-sales-net
 
-  # Autentication microservices
+
+  # Authentication microservice
   service-auth:
     build:
       context: ./service-auth
@@ -56,6 +60,7 @@ services:
     networks:
       - smart-sales-net
 
+
   # API Gateway
   api-gateway:
     build:
@@ -67,13 +72,18 @@ services:
     environment:
       - AUTH_SERVICE_URL=http://service-auth:8081
       - USER_SERVICE_URL=http://service-user:8082
+      - CUSTOMERS_SERVICE_URL=http://service-customers:8083
+      - PRODUCTS_SERVICE_URL=http://service-products:8084
     depends_on:
       - service-auth
       - service-user
+      - service-customers
+      - service-products
     networks:
       - smart-sales-net
 
-    # database do service-customers
+
+  # service-customers database
   customers-db:
     image: postgres:16-alpine
     container_name: customers-db
@@ -93,7 +103,8 @@ services:
     networks:
       - smart-sales-net
 
-    # microsserviço de clientes
+
+  # Customers microservice
   service-customers:
     build:
       context: ./service-customers
@@ -112,6 +123,46 @@ services:
     networks:
       - smart-sales-net
 
+
+    # database do service-products
+  product-db:
+    image: postgres:16-alpine
+    container_name: product-db
+    environment:
+      POSTGRES_DB: smart_sales_products
+      POSTGRES_USER: user_products
+      POSTGRES_PASSWORD: 123456
+    ports:
+      - "5434:5432" # Alterado para 5434 para evitar conflito na máquina host
+    volumes:
+      - product_db_data:/var/lib/postgresql/data # Apontado para o volume correto
+    healthcheck:
+      test: [ "CMD-SHELL", "pg_isready -U user_products -d smart_sales_products" ]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+    networks:
+      - smart-sales-net
+
+    # microsserviço de produtos
+  service-products:
+    build:
+      context: ./service-products
+      dockerfile: Dockerfile
+    container_name: service-products
+    ports:
+      - "8084:8084"
+    environment:
+      - SPRING_DATASOURCE_URL=jdbc:postgresql://product-db:5432/smart_sales_products
+      - SPRING_DATASOURCE_USERNAME=user_products
+      - SPRING_DATASOURCE_PASSWORD=123456
+      - SPRING_JPA_HIBERNATE_DDL_AUTO=update
+    depends_on:
+      product-db:
+        condition: service_healthy
+    networks:
+      - smart-sales-net
+
 networks:
   smart-sales-net:
     driver: bridge
@@ -119,3 +170,4 @@ networks:
 volumes:
   user_db_data:
   customers_db_data:
+  product_db_data:
