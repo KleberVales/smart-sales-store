@@ -40,6 +40,7 @@ store-automation/
 ├── service-products
 ├── service-inventory
 ├── service-orders
+├── service-payments
 
 ```
 
