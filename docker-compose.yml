@@ -133,9 +133,9 @@ services:
       POSTGRES_USER: user_products
       POSTGRES_PASSWORD: 123456
     ports:
-      - "5434:5432" # Alterado para 5434 para evitar conflito na máquina host
+      - "5434:5432"
     volumes:
-      - product_db_data:/var/lib/postgresql/data # Apontado para o volume correto
+      - product_db_data:/var/lib/postgresql/data
     healthcheck:
       test: [ "CMD-SHELL", "pg_isready -U user_products -d smart_sales_products" ]
       interval: 5s
