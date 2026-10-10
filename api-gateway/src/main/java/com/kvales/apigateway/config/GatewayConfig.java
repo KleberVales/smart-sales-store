@@ -38,6 +38,13 @@ public class GatewayConfig {
                                         .setName("customersServiceCB")
                                         .setFallbackUri("forward:/fallback/customers")))
                         .uri("http://service-customers:8083"))
+                .route("service-products", r -> r
+                        .path("/api/products/**")
+                        .filters(f -> f
+                                .circuitBreaker(config -> config
+                                        .setName("productsServiceCB")
+                                        .setFallbackUri("forward:/fallback/products")))
+                        .uri("http://service-products:8084"))
                 .build();
     }
 }

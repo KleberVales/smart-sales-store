@@ -27,6 +27,11 @@ public class FallbackController {
         return Mono.just(createFallbackResponse("Customers Service is currently unavailable"));
     }
 
+    @GetMapping("/products")
+    public Mono<Map<String, Object>> productsFallback() {
+        return Mono.just(createFallbackResponse("Products Service is currently unavailable"));
+    }
+
     private Map<String, Object> createFallbackResponse(String message) {
         Map<String, Object> response = new HashMap<>();
         response.put("status", 503);
