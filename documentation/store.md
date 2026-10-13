@@ -68,15 +68,7 @@ This layered organization ensures that store automation is sustainable: business
 
 ## Evolution to Microservices and Distributed Automation
 
-
-
-
-
-
-
-
-
-
+One of the most relevant points in the repository documentation is the preparation for the **evolution towards microservices**. In the context of store automation, this means that each operational function can become an autonomous service, with its own database and business rules. The project already includes an **API Gateway** as a single point of entry, a **discovery-server** for service location, and a **config-server** for centralized configuration management.
 
 
 
