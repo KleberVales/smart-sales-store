@@ -4,5 +4,12 @@ Store automation represents the application of software technologies to manage, 
 
 The central purpose of the repository is to demonstrate how store automation can be built on solid architectural principles such as **Clean Architecture**, **Domain-Driven Design (DDD)**, and **modularity**. Instead of concentrating all business rules in a single block of code, the system isolates each business capability into independent modules, allowing the store to automate everything from user registration to payment processing and the generation of management reports. This approach ensures that automation does not become a bottleneck, but rather a strategic asset for business growth.
 
+---
+
+## Modular Architecture and Service Structure
+
+
+
+
 
 
