@@ -8,6 +8,13 @@ The central purpose of the repository is to demonstrate how store automation can
 
 ## Modular Architecture and Service Structure
 
+Smart Sales Store adopts a **multi-module Gradle** structure, meaning that each store service can be developed, tested, and deployed independently. This architectural decision is fundamental to store automation, as it allows different sectors of the operation—such as sales, inventory, customers, and payments—to evolve at different paces without a change in one module breaking the others.
+
+The project's directory structure reveals the scope of the intended automation:
+
+
+
+
 
 
 
