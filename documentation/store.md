@@ -62,6 +62,16 @@ The figure below illustrates the layered separation that supports store automati
 └─────────────────────┘
 ```
 
+This layered organization ensures that store automation is sustainable: business rules (such as discount calculation, inventory validation, or order flow) are isolated and can be tested without depending on the database or the REST interface.
+
+---
+
+## Evolution to Microservices and Distributed Automation
+
+
+
+
+
 
 
 
