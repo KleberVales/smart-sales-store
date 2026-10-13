@@ -12,6 +12,28 @@ Smart Sales Store adopts a **multi-module Gradle** structure, meaning that each 
 
 The project's directory structure reveals the scope of the intended automation:
 
+```
+store-automation/
+├── api-gateway
+├── service-auth
+├── service-users
+├── service-customers
+├── service-products
+├── service-inventory
+├── service-orders
+├── service-payments
+├── service-sales
+├── service-notifications
+├── service-reports
+├── service-integrations
+├── discovery-server
+├── config-server
+└── docker-compose
+
+```
+
+
+Each folder represents an automatable business capability. The **service-users** folder, for example, is already implemented and uses Java 21, Spring Boot, Spring Web, Spring Data JPA, PostgreSQL, Lombok, and JUnit 5. It keeps business rules separate from the infrastructure, allowing the store's domain to remain independent of frameworks and databases. The other services—such as products, inventory, orders, payments, and reports—are planned to form a complete business automation ecosystem.
 
 
 
