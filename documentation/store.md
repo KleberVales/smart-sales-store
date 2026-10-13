@@ -70,6 +70,25 @@ This layered organization ensures that store automation is sustainable: business
 
 One of the most relevant points in the repository documentation is the preparation for the **evolution towards microservices**. In the context of store automation, this means that each operational function can become an autonomous service, with its own database and business rules. The project already includes an **API Gateway** as a single point of entry, a **discovery-server** for service location, and a **config-server** for centralized configuration management.
 
+The planned future architecture is represented as follows:
+
+```
+            ┌─────────────────┐
+            │   API Gateway   │
+            └────────┬────────┘
+                     │
+┌────────────────────┼────────────────────┐
+│                    │                    │
+▼                    ▼                    ▼
+┌─────────────┐ ┌─────────────┐    ┌─────────────┐
+│ User Service│ │Sales Service│    │     Product │
+│             │ │             │    │     Service │
+└──────┬──────┘ └──────┬──────┘    └──────┬──────┘
+       │               │                  │
+       ▼               ▼                  ▼
+                    PostgreSQL
+
+
 
 
 
