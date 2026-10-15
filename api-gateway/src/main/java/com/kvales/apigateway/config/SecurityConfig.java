@@ -30,7 +30,7 @@ public class SecurityConfig {
                         .pathMatchers("/fallback/**").permitAll()
                         .pathMatchers("/api/users").permitAll()
                         .pathMatchers("/api/customers").permitAll()
-                        .pathMatchers("/api/products").permitAll()
+                        .pathMatchers("/api/products", "/api/products/**").permitAll()
                         .anyExchange().authenticated()
                 )
                 .build();
