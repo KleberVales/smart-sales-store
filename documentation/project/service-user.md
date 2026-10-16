@@ -78,6 +78,10 @@ The User Service is built using modern, industry-standard technologies that ensu
 | Data Storage | PostgreSQL |
 | Web Interface | REST API |
 | Build System | Gradle |
+| Testing | JUnit 5 |
 
+These technologies are widely adopted in enterprise environments, ensuring that the service benefits from ongoing support, security updates, and community knowledge.
+
+---
 
 
