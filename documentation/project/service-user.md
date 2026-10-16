@@ -16,4 +16,6 @@ The User Service exists to:
 
 ## 3. Key Capabilities
 
+### 3.1 User Registration
+
 
