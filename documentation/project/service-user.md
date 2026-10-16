@@ -10,11 +10,6 @@ The User Service exists to:
 
 - Maintain a centralized repository of user information
 - Provide secure access to user data through well-defined interfaces
-
-
-
-
-
-
+- Ensure data integrity and consistency for all user-related operations
 
 
