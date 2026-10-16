@@ -92,6 +92,10 @@ The User Service focuses exclusively on user-related functionality. It does not 
 - Sales transactions
 - Inventory management
 - Payment processing
+- Order fulfillment
+
+This clear separation ensures that each part of the Smart Sales Store platform can evolve independently while maintaining a coherent overall system.
+
 
 
 
