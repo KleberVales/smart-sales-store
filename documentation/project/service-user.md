@@ -102,6 +102,8 @@ This clear separation ensures that each part of the Smart Sales Store platform c
 
 The User Service is accessible through standard web-based interfaces. Users and systems interact with it by sending requests and receiving responses in a structured format.
 
+Access to the service is controlled to ensure that only authorized parties can perform operations. The service supports common operations needed for user management and can be integrated into various client applications.
 
+---
 
 
