@@ -1,5 +1,8 @@
 # Smart Sales Store
 
+[![Java](https://img.shields.io/badge/Java-ED8B00?style=for-the-badge&logo=openjdk&logoColor=white)](https://openjdk.org/)
+
+
 A backend application for managing sales operations, designed with a focus on **clean architecture, domain-driven design, modularity, and scalable backend development**.
 
 The project is being developed as a practical study of modern **Java and Spring Boot** backend engineering, with the architecture prepared to evolve into a distributed system.
