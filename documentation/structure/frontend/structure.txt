@@ -13,8 +13,15 @@ frontend
         ├── pages/
         │   ├── DashboardPage.tsx
         │   ├── ProductsPage.tsx
+        │   ├── ProductsPage.css
+        │   ├── CreateCustomerPage.tsx
+        │   ├── CreateCustomerPage.css
+        │   ├── CustomersPage.css
         │   └── CustomersPage.tsx
         ├── services/
         │   └── api.ts
+        │   └── customerService.ts
+        ├── types/
+        │   └── customer.ts
         ├── App.tsx
         └── main.tsx
