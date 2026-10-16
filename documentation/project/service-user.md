@@ -46,6 +46,8 @@ All user data is stored in a reliable database system, ensuring that information
 
 ### For Platform Users
 
+- **Reliable Data Storage:** User information is stored securely and consistently
+
 
 
 
