@@ -8,6 +8,9 @@ This service handles the registration, retrieval, updating, and management of us
 
 The User Service exists to:
 
+- Maintain a centralized repository of user information
+
+
 
 
 
