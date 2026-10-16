@@ -1,6 +1,7 @@
 # Smart Sales Store
 
 [![Java](https://img.shields.io/badge/Java-ED8B00?style=for-the-badge&logo=openjdk&logoColor=white)](https://openjdk.org/)
+[![Spring](https://img.shields.io/badge/Spring-6DB33F?style=for-the-badge&logo=spring&logoColor=white)](https://spring.io/)
 
 
 A backend application for managing sales operations, designed with a focus on **clean architecture, domain-driven design, modularity, and scalable backend development**.
