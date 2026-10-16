@@ -76,6 +76,8 @@ The User Service is built using modern, industry-standard technologies that ensu
 | Programming Language | Java 21 |
 | Application Framework | Spring Boot |
 | Data Storage | PostgreSQL |
+| Web Interface | REST API |
+| Build System | Gradle |
 
 
 
