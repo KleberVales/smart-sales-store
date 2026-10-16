@@ -108,6 +108,18 @@ Access to the service is controlled to ensure that only authorized parties can p
 
 ## 9. Reliability and Quality
 
+The User Service is developed with a strong emphasis on quality:
+
+- **Automated Testing:** All functionality is verified through automated tests
+- **Consistent Behavior:** The service behaves predictably under various conditions
+- **Error Handling:** Clear responses are provided when issues occur
+- **Data Validation:** Input data is checked before being processed
+- **Separation of Concerns:** Business logic is kept separate from technical details
+
+---
+
+
+
 
 
 
