@@ -90,6 +90,8 @@ The User Service focuses exclusively on user-related functionality. It does not 
 
 - Product information
 - Sales transactions
+- Inventory management
+- Payment processing
 
 
 
