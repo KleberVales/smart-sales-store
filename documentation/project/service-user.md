@@ -6,6 +6,10 @@ This service handles the registration, retrieval, updating, and management of us
 
 ## 2. Purpose
 
+The User Service exists to:
+
+
+
 
 
 
