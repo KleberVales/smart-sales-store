@@ -1,3 +1,4 @@
+
 import {
   BrowserRouter,
   Routes,
@@ -8,6 +9,8 @@ import {
 import LoginPage from "./pages/LoginPage";
 import DashboardPage from "./pages/DashboardPage";
 import ProductsPage from "./pages/ProductsPage";
+import CustomersPage from "./pages/CustomersPage";
+import CreateCustomerPage from "./pages/CreateCustomerPage";
 
 export default function App() {
   return (
@@ -16,6 +19,12 @@ export default function App() {
           <Route path="/login" element={<LoginPage />} />
           <Route path="/dashboard" element={<DashboardPage />} />
           <Route path="/products" element={<ProductsPage />} />
+
+          <Route path="/customers" element={<CustomersPage />} />
+          <Route
+              path="/customers/new"
+              element={<CreateCustomerPage />}
+          />
 
           <Route
               path="/"
