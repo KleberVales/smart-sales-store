@@ -118,6 +118,14 @@ The User Service is developed with a strong emphasis on quality:
 
 ---
 
+## 10. Future Capabilities
+
+The User Service is designed to grow and evolve. Planned enhancements include:
+
+- Enhanced authentication features
+- Integration with additional platform services
+
+
 
 
 
