@@ -25,11 +25,11 @@ public class SecurityConfig {
                 .cors(cors -> cors.configurationSource(corsConfigurationSource()))
                 .authorizeExchange(exchange -> exchange
                         .pathMatchers(HttpMethod.OPTIONS, "/**").permitAll()
-                        .pathMatchers("/api/auth/**").permitAll()
+                        .pathMatchers("/api/auth", "/api/auth/**").permitAll()
                         .pathMatchers("/actuator/**").permitAll()
                         .pathMatchers("/fallback/**").permitAll()
                         .pathMatchers("/api/users").permitAll()
-                        .pathMatchers("/api/customers").permitAll()
+                        .pathMatchers("/api/customers", "/api/customers/**").permitAll()
                         .pathMatchers("/api/products", "/api/products/**").permitAll()
                         .anyExchange().authenticated()
                 )

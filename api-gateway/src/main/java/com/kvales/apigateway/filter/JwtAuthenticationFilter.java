@@ -27,6 +27,7 @@ public class JwtAuthenticationFilter implements GlobalFilter, Ordered {
             "/api/auth/login",
             "/api/auth/register",
             "/api/products",
+            "/api/customers",
             "/api/auth/refresh-token",
             "/actuator/health"
     );
