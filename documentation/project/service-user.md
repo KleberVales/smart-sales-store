@@ -88,6 +88,8 @@ These technologies are widely adopted in enterprise environments, ensuring that 
 
 The User Service focuses exclusively on user-related functionality. It does not handle:
 
+- Product information
+- Sales transactions
 
 
 
