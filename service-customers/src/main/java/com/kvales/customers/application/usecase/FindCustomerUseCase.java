@@ -8,6 +8,8 @@ import com.kvales.customers.domain.repository.CustomerRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 @RequiredArgsConstructor
 public class FindCustomerUseCase {
@@ -32,5 +34,14 @@ public class FindCustomerUseCase {
                 ));
 
         return CustomerResponse.from(customer);
+    }
+
+
+    public List<CustomerResponse> findAllCustomers(){
+
+        return customerRepository.findAllCustomers().stream()
+                .map(CustomerResponse::from)
+                .toList();
+
     }
 }

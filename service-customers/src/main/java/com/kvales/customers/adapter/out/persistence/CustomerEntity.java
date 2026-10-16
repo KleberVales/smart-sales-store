@@ -1,5 +1,6 @@
 package com.kvales.customers.adapter.out.persistence;
 
+import com.kvales.customers.domain.model.Customer;
 import com.kvales.customers.domain.model.CustomerStatus;
 import jakarta.persistence.*;
 import lombok.Getter;
@@ -90,4 +91,15 @@ public class CustomerEntity {
         this.status = status;
         this.updatedAt = updatedAt;
     }
+
+    public Customer toDomain() {
+        return new Customer(
+                name,
+                cpf,
+                email,
+                phone,
+                birthDate
+        );
+    }
+
 }

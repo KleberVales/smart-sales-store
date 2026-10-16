@@ -2,6 +2,7 @@ package com.kvales.customers.domain.repository;
 
 import com.kvales.customers.domain.model.Customer;
 
+import java.util.List;
 import java.util.Optional;
 
 public interface CustomerRepository {
@@ -11,6 +12,8 @@ public interface CustomerRepository {
     Optional<Customer> findById(Long id);
 
     Optional<Customer> findByEmail(String email);
+
+    List<Customer> findAllCustomers();
 
     Optional<Customer> findByCpf(String cpf);
 

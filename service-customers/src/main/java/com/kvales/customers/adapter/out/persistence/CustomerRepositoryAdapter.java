@@ -5,6 +5,7 @@ import com.kvales.customers.domain.repository.CustomerRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
 
+import java.util.List;
 import java.util.Optional;
 
 @Component
@@ -91,5 +92,11 @@ public class CustomerRepositoryAdapter
                 entity.getCreatedAt(),
                 entity.getUpdatedAt()
         );
+    }
+
+    @Override
+    public List<Customer> findAllCustomers(){
+
+        return repository.findAll().stream().map(CustomerEntity::toDomain).toList();
     }
 }

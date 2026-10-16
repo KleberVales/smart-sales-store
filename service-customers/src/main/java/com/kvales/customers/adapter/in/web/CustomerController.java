@@ -12,6 +12,8 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 @RequestMapping("/api/customers")
 @RequiredArgsConstructor
@@ -46,7 +48,7 @@ public class CustomerController {
         );
     }
 
-    @GetMapping
+    @GetMapping("/email")
     public ResponseEntity<CustomerResponse> findByEmail(
             @RequestParam String email
     ) {
@@ -54,6 +56,14 @@ public class CustomerController {
         return ResponseEntity.ok(
                 findCustomerUseCase.findByEmail(email)
         );
+    }
+
+    @GetMapping
+    public ResponseEntity<List<CustomerResponse>> findAllCustomers(){
+
+        List<CustomerResponse> customers = findCustomerUseCase.findAllCustomers();
+
+        return ResponseEntity.ok(customers);
     }
 
     @PutMapping("/{id}")
