@@ -100,6 +100,8 @@ This clear separation ensures that each part of the Smart Sales Store platform c
 
 ## 8. Access and Usage
 
+The User Service is accessible through standard web-based interfaces. Users and systems interact with it by sending requests and receiving responses in a structured format.
+
 
 
 
