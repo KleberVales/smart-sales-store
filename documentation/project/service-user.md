@@ -33,3 +33,6 @@ Existing user information can be updated to reflect changes. The service ensures
 The service provides the necessary operations to manage the lifecycle of user accounts within the platform.
 
 ---
+
+## 4. How It Works
+
