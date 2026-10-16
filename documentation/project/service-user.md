@@ -96,6 +96,10 @@ The User Service focuses exclusively on user-related functionality. It does not 
 
 This clear separation ensures that each part of the Smart Sales Store platform can evolve independently while maintaining a coherent overall system.
 
+---
+
+## 8. Access and Usage
+
 
 
 
