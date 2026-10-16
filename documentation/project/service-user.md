@@ -71,6 +71,11 @@ All user data is stored in a reliable database system, ensuring that information
 
 The User Service is built using modern, industry-standard technologies that ensure reliability, performance, and maintainability:
 
+| Aspect | Technology |
+|--------|------------|
+| Programming Language | Java 21 |
+| Application Framework | Spring Boot |
+| Data Storage | PostgreSQL |
 
 
 
