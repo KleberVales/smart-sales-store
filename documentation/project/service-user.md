@@ -67,6 +67,10 @@ All user data is stored in a reliable database system, ensuring that information
 
 ---
 
+## 6. Technical Foundation
+
+The User Service is built using modern, industry-standard technologies that ensure reliability, performance, and maintainability:
+
 
 
 
