@@ -14,4 +14,6 @@ The User Service exists to:
 - Serve as the foundation for authentication and authorization across the platform
 - Enable other services to reference user information reliably
 
+## 3. Key Capabilities
+
 
