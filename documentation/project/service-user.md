@@ -18,4 +18,5 @@ The User Service exists to:
 
 ### 3.1 User Registration
 
+New users can be registered in the system with their essential information. The service validates all incoming data to ensure completeness and correctness before storing it.
 
