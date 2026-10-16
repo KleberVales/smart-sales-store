@@ -38,6 +38,8 @@ The service provides the necessary operations to manage the lifecycle of user ac
 
 The User Service operates as an independent component within the Smart Sales Store platform. It communicates with other parts of the system through standard web-based interfaces, making it accessible to both internal services and external clients.
 
+All user data is stored in a reliable database system, 
+
 
 
 
