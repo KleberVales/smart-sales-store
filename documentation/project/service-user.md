@@ -54,6 +54,8 @@ All user data is stored in a reliable database system, ensuring that information
 ### For Administrators
 
 - **Centralized Management:** All user data managed in one place
+- **Scalable Design:** Ready to handle growth in user base
+- **Maintainable Structure:** Clear organization makes updates and improvements easier
 
 
 
