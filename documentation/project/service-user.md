@@ -22,3 +22,9 @@ New users can be registered in the system with their essential information. The 
 
 ### 3.2 User Retrieval
 
+User information can be retrieved individually or as part of a list. This allows other parts of the system to access user details when needed for their operations.
+
+### 3.3 User Updates
+
+Existing user information can be updated to reflect changes. The service ensures that updates maintain data consistency and do not compromise the integrity of the user records.
+
