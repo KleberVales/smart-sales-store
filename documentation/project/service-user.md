@@ -28,3 +28,8 @@ User information can be retrieved individually or as part of a list. This allows
 
 Existing user information can be updated to reflect changes. The service ensures that updates maintain data consistency and do not compromise the integrity of the user records.
 
+### 3.4 User Management
+
+The service provides the necessary operations to manage the lifecycle of user accounts within the platform.
+
+---
