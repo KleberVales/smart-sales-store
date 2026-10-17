@@ -1,0 +1,288 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: service-user
+  namespace: smart-sales
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: service-user
+  template:
+    metadata:
+      labels:
+        app: service-user
+    spec:
+      containers:
+        - name: service-user
+          image: smart-sales/service-user:1.0
+          imagePullPolicy: IfNotPresent
+          ports:
+            - containerPort: 8082
+          env:
+            - name: SERVER_PORT
+              value: "8082"
+            - name: SPRING_DATASOURCE_URL
+              value: jdbc:postgresql://user-db:5432/user_db
+            - name: SPRING_DATASOURCE_USERNAME
+              value: user_service
+            - name: SPRING_DATASOURCE_PASSWORD
+              value: "123456"
+            - name: SPRING_JPA_HIBERNATE_DDL_AUTO
+              value: update
+          readinessProbe:
+            tcpSocket:
+              port: 8082
+            initialDelaySeconds: 15
+            periodSeconds: 5
+          livenessProbe:
+            tcpSocket:
+              port: 8082
+            initialDelaySeconds: 30
+            periodSeconds: 10
+          resources:
+            requests:
+              cpu: 100m
+              memory: 256Mi
+            limits:
+              cpu: 750m
+              memory: 768Mi
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: service-user
+  namespace: smart-sales
+spec:
+  selector:
+    app: service-user
+  ports:
+    - port: 8082
+      targetPort: 8082
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: service-auth
+  namespace: smart-sales
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: service-auth
+  template:
+    metadata:
+      labels:
+        app: service-auth
+    spec:
+      containers:
+        - name: service-auth
+          image: smart-sales/service-auth:1.0
+          imagePullPolicy: IfNotPresent
+          ports:
+            - containerPort: 8081
+          env:
+            - name: SERVER_PORT
+              value: "8081"
+            - name: SERVICE_USER_URL
+              value: http://service-user:8082
+          readinessProbe:
+            tcpSocket:
+              port: 8081
+            initialDelaySeconds: 15
+            periodSeconds: 5
+          livenessProbe:
+            tcpSocket:
+              port: 8081
+            initialDelaySeconds: 30
+            periodSeconds: 10
+          resources:
+            requests:
+              cpu: 100m
+              memory: 256Mi
+            limits:
+              cpu: 750m
+              memory: 768Mi
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: service-auth
+  namespace: smart-sales
+spec:
+  selector:
+    app: service-auth
+  ports:
+    - port: 8081
+      targetPort: 8081
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: service-customers
+  namespace: smart-sales
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: service-customers
+  template:
+    metadata:
+      labels:
+        app: service-customers
+    spec:
+      containers:
+        - name: service-customers
+          image: smart-sales/service-customers:1.0
+          imagePullPolicy: IfNotPresent
+          ports:
+            - containerPort: 8083
+          env:
+            - name: SPRING_DATASOURCE_URL
+              value: jdbc:postgresql://customers-db:5432/customers_db
+            - name: SPRING_DATASOURCE_USERNAME
+              value: customers_service
+            - name: SPRING_DATASOURCE_PASSWORD
+              value: "123456"
+            - name: SPRING_JPA_HIBERNATE_DDL_AUTO
+              value: update
+          readinessProbe:
+            tcpSocket:
+              port: 8083
+            initialDelaySeconds: 15
+            periodSeconds: 5
+          livenessProbe:
+            tcpSocket:
+              port: 8083
+            initialDelaySeconds: 30
+            periodSeconds: 10
+          resources:
+            requests:
+              cpu: 100m
+              memory: 256Mi
+            limits:
+              cpu: 750m
+              memory: 768Mi
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: service-customers
+  namespace: smart-sales
+spec:
+  selector:
+    app: service-customers
+  ports:
+    - port: 8083
+      targetPort: 8083
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: service-products
+  namespace: smart-sales
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: service-products
+  template:
+    metadata:
+      labels:
+        app: service-products
+    spec:
+      containers:
+        - name: service-products
+          image: smart-sales/service-products:1.0
+          imagePullPolicy: IfNotPresent
+          ports:
+            - containerPort: 8084
+          env:
+            - name: SPRING_DATASOURCE_URL
+              value: jdbc:postgresql://product-db:5432/smart_sales_products
+            - name: DB_USERNAME
+              value: user_products
+            - name: DB_PASSWORD
+              value: "123456"
+          readinessProbe:
+            tcpSocket:
+              port: 8084
+            initialDelaySeconds: 15
+            periodSeconds: 5
+          livenessProbe:
+            tcpSocket:
+              port: 8084
+            initialDelaySeconds: 30
+            periodSeconds: 10
+          resources:
+            requests:
+              cpu: 100m
+              memory: 256Mi
+            limits:
+              cpu: 750m
+              memory: 768Mi
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: service-products
+  namespace: smart-sales
+spec:
+  selector:
+    app: service-products
+  ports:
+    - port: 8084
+      targetPort: 8084
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: api-gateway
+  namespace: smart-sales
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: api-gateway
+  template:
+    metadata:
+      labels:
+        app: api-gateway
+    spec:
+      containers:
+        - name: api-gateway
+          image: smart-sales/api-gateway:1.0
+          imagePullPolicy: IfNotPresent
+          ports:
+            - containerPort: 8080
+          readinessProbe:
+            tcpSocket:
+              port: 8080
+            initialDelaySeconds: 15
+            periodSeconds: 5
+          livenessProbe:
+            tcpSocket:
+              port: 8080
+            initialDelaySeconds: 30
+            periodSeconds: 10
+          resources:
+            requests:
+              cpu: 100m
+              memory: 256Mi
+            limits:
+              cpu: 750m
+              memory: 768Mi
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: api-gateway
+  namespace: smart-sales
+spec:
+  type: NodePort
+  selector:
+    app: api-gateway
+  ports:
+    - port: 8080
+      targetPort: 8080
+      nodePort: 30080
