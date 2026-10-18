@@ -29,8 +29,7 @@ Paths are forwarded unchanged (no prefix stripping), so GET /api/products/12 on 
 <img width="1548" height="394" alt="image" src="https://github.com/user-attachments/assets/a075e9f5-5ccd-448f-bf9d-a39295b91966" />
 Figure 2. Decision flow of JwtAuthenticationFilter (a global filter, order -100).
 
-Tokens are verified with the shared secret configured in jwt.
-
+Tokens are verified with the shared secret configured in jwt. secret (an HMAC key of at least 32 characters) and must not be expired. 
 
 
 
