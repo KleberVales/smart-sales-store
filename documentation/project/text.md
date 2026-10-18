@@ -14,3 +14,7 @@ Responsibilities
 - Cross-cutting concerns: CORS policy, Actuator health and route inspection endpoints.
 
 ## 2. Architecture
+
+<img width="1542" height="603" alt="image" src="https://github.com/user-attachments/assets/374efe75-444e-4fc1-a86a-db384eec98fb" />
+
+
