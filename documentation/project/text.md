@@ -20,28 +20,8 @@ Figure 1. Request path from client through the gateway filter chain to the downs
 
 ## 3. Route table
 
-     
+<img width="1928" height="852" alt="Screenshot from 2026-10-13 09-37-40" src="https://github.com/user-attachments/assets/df85f092-e9e0-42e7-8d95-69c986f81cd4" />
 
-Path predicate
-Target (default)
-Circuit breaker
-Fallback
-/api/auth/**
-http://service-auth:8081
-authServiceCB (+ 3 retries on 503)
-/fallback/auth
-/api/users/**
-http://service-user:8082
-userServiceCB
-/fallback/users
-/api/customers/**
-http://service-customers:8083
-customersServiceCB
-/fallback/customers
-/api/products/**
-http://service-products:8084
-productsServiceCB
-/fallback/products
 
 
 
