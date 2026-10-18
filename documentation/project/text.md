@@ -26,5 +26,8 @@ Paths are forwarded unchanged (no prefix stripping), so GET /api/products/12 on 
 
 ## 4. Authentication and security
 
+<img width="1548" height="394" alt="image" src="https://github.com/user-attachments/assets/a075e9f5-5ccd-448f-bf9d-a39295b91966" />
+
+
 
 
