@@ -31,6 +31,8 @@ Figure 2. Decision flow of JwtAuthenticationFilter (a global filter, order -100)
 
 Tokens are verified with the shared secret configured in jwt. secret (an HMAC key of at least 32 characters) and must not be expired. After a successful check, the gateway adds two headers that downstream services can trust and use without re-parsing the token:
 
+<img width="1217" height="115" alt="Screenshot from 2026-10-18 18-06-40" src="https://github.com/user-attachments/assets/29f99742-ae5d-46d7-9a80-b7dd0ab48b81" />
+
 
 
 
