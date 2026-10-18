@@ -8,5 +8,8 @@ The API Gateway is the single entry point to the Smart Sales Store backend. Clie
 
 Responsibilities
 
+◦ Routing of /api/** paths to the auth, user, customers and products services.
+
+
 
 
