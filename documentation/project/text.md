@@ -22,7 +22,7 @@ Figure 1. Request path from client through the gateway filter chain to the downs
 
 <img width="1219" height="173" alt="Screenshot from 2026-10-18 16-44-38" src="https://github.com/user-attachments/assets/877cf8b1-7176-418d-ac89-4a4dadcd7b67" />
 
-Paths are forwarded unchanged (no prefix stripping), 
+Paths are forwarded unchanged (no prefix stripping), so GET /api/products/12 on the gateway reaches GET /api/products/12 on service-products. 
 
 
 
