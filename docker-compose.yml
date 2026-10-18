@@ -7,9 +7,9 @@ services:
     image: postgres:16-alpine
     container_name: user-db
     environment:
-      POSTGRES_DB: user_db
-      POSTGRES_USER: user_service
-      POSTGRES_PASSWORD: 123456
+      POSTGRES_DB: ${USER_DB_NAME}
+      POSTGRES_USER: ${USER_DB_USERNAME}
+      POSTGRES_PASSWORD: ${USER_DB_PASSWORD}
     ports:
       - "5435:5432"
     volumes:
@@ -22,9 +22,6 @@ services:
     networks:
       - smart-sales-net
 
-
-
-
   # Users microservice
   service-user:
     build:
@@ -34,10 +31,10 @@ services:
     ports:
       - "8082:8082"
     environment:
-      - SPRING_DATASOURCE_URL=jdbc:postgresql://user-db:5432/user_db
-      - SPRING_DATASOURCE_USERNAME=user_service
-      - SPRING_DATASOURCE_PASSWORD=123456
-      - SPRING_JPA_HIBERNATE_DDL_AUTO=update
+      SPRING_DATASOURCE_URL: jdbc:postgresql://user-db:5432/user_db
+      SPRING_DATASOURCE_USERNAME: ${USER_DB_USERNAME}
+      SPRING_DATASOURCE_PASSWORD: ${USER_DB_PASSWORD}
+      SPRING_JPA_HIBERNATE_DDL_AUTO: update
     depends_on:
       user-db:
         condition: service_healthy
@@ -88,9 +85,9 @@ services:
     image: postgres:16-alpine
     container_name: customers-db
     environment:
-      POSTGRES_DB: customers_db
-      POSTGRES_USER: customers_service
-      POSTGRES_PASSWORD: 123456
+      POSTGRES_DB: ${CUSTOMERS_DB_NAME}
+      POSTGRES_USER: ${CUSTOMERS_DB_USERNAME}
+      POSTGRES_PASSWORD: ${CUSTOMERS_DB_PASSWORD}
     ports:
       - "5433:5432"
     volumes:
@@ -113,10 +110,10 @@ services:
     ports:
       - "8083:8083"
     environment:
-      - SPRING_DATASOURCE_URL=jdbc:postgresql://customers-db:5432/customers_db
-      - SPRING_DATASOURCE_USERNAME=customers_service
-      - SPRING_DATASOURCE_PASSWORD=123456
-      - SPRING_JPA_HIBERNATE_DDL_AUTO=update
+      SPRING_DATASOURCE_URL: jdbc:postgresql://customers-db:5432/customers_db
+      SPRING_DATASOURCE_USERNAME: ${CUSTOMERS_DB_USERNAME}
+      SPRING_DATASOURCE_PASSWORD: ${CUSTOMERS_DB_PASSWORD}
+      SPRING_JPA_HIBERNATE_DDL_AUTO: update
     depends_on:
       customers-db:
         condition: service_healthy
