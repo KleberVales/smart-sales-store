@@ -129,9 +129,9 @@ services:
     image: postgres:16-alpine
     container_name: product-db
     environment:
-      POSTGRES_DB: smart_sales_products
-      POSTGRES_USER: user_products
-      POSTGRES_PASSWORD: 123456
+      POSTGRES_DB: ${PRODUCT_DB_NAME}
+      POSTGRES_USER: ${PRODUCT_DB_USERNAME}
+      POSTGRES_PASSWORD: ${PRODUCT_DB_PASSWORD}
     ports:
       - "5434:5432"
     volumes:
@@ -153,10 +153,10 @@ services:
     ports:
       - "8084:8084"
     environment:
-      - SPRING_DATASOURCE_URL=jdbc:postgresql://product-db:5432/smart_sales_products
-      - SPRING_DATASOURCE_USERNAME=user_products
-      - SPRING_DATASOURCE_PASSWORD=123456
-      - SPRING_JPA_HIBERNATE_DDL_AUTO=update
+        SPRING_DATASOURCE_URL: jdbc:postgresql://product-db:5432/smart_sales_products
+        DB_USERNAME: ${PRODUCT_DB_USERNAME}
+        DB_PASSWORD: ${PRODUCT_DB_PASSWORD}
+        SPRING_JPA_HIBERNATE_DDL_AUTO: update
     depends_on:
       product-db:
         condition: service_healthy
