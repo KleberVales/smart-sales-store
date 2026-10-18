@@ -1,4 +1,4 @@
-# Estágio de Build
+# Build
 FROM gradle:8.10-jdk21-alpine AS build
 
 WORKDIR /app
@@ -9,7 +9,7 @@ COPY src ./src
 
 RUN gradle clean build -x test --no-daemon
 
-# Estágio de Execução
+# Execução
 FROM eclipse-temurin:21-jre-alpine
 
 WORKDIR /app
