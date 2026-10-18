@@ -51,6 +51,7 @@ curl http://localhost:8080/actuator/gateway/routes
 The login request body above is illustrative; see the service-auth module for the exact contract.
 ```
 
+## 6. Configuration and deployment
 
 
 
