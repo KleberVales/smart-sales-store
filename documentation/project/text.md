@@ -18,5 +18,7 @@ Responsibilities
 <img width="1542" height="603" alt="image" src="https://github.com/user-attachments/assets/374efe75-444e-4fc1-a86a-db384eec98fb" />
 Figure 1. Request path from client through the gateway filter chain to the downstream services.
 
+## 3. Route table
+
 
 
