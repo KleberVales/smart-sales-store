@@ -6,12 +6,12 @@ Smart Sales Store | module api-gateway | Java 21, Spring Boot 3.3.4, Spring Clou
     
 The API Gateway is the single entry point to the Smart Sales Store backend. Clients such as the React frontend never call a microservice directly: every request goes to the gateway on port 8080, which authenticates it, picks the right service from the URL path, and protects the system from failing downstream services. It is built on Spring Cloud Gateway (reactive, non-blocking) and runs as its own Gradle module and Docker image.
 
-<h2 style="color: green;">Responsibilities</h2>
+![Responsibilities](https://img.shields.io/badge/Responsibilities-2E7D32?style=flat-square)
 
 - Routing of `/api/**` paths to the auth, user, customers and products services.
 - Authentication: validates JWT bearer tokens and passes the caller's identity downstream.
 - Resilience: circuit breakers with fallback responses, plus retries on the auth route.
 - Cross-cutting concerns: CORS policy, Actuator health and route inspection endpoints.
 
-<h2 style="color: blue;">2. Architecture</h2>
+![2. Architecture](https://img.shields.io/badge/2.%20Architecture-1565C0?style=flat-square)
 
