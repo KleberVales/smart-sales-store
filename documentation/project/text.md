@@ -46,6 +46,10 @@ curl -X POST http://localhost:8080/api/auth/login \
 # 2. Call a protected route with the returned token
 curl http://localhost:8080/api/users -H "Authorization: Bearer <token>"
 
+# 3. Check gateway health and the loaded routes curl http://localhost:8080/actuator/health
+curl http://localhost:8080/actuator/gateway/routes
+The login request body above is illustrative; see the service-auth module for the exact contract.
+```
 
 
 
