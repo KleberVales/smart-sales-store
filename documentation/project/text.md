@@ -20,5 +20,29 @@ Figure 1. Request path from client through the gateway filter chain to the downs
 
 ## 3. Route table
 
+     
+
+Path predicate
+Target (default)
+Circuit breaker
+Fallback
+/api/auth/**
+http://service-auth:8081
+authServiceCB (+ 3 retries on 503)
+/fallback/auth
+/api/users/**
+http://service-user:8082
+userServiceCB
+/fallback/users
+/api/customers/**
+http://service-customers:8083
+customersServiceCB
+/fallback/customers
+/api/products/**
+http://service-products:8084
+productsServiceCB
+/fallback/products
+
+
 
 
