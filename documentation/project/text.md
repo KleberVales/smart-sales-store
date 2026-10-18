@@ -62,6 +62,9 @@ Reviewing the source turned up a few items worth fixing before production use:
 - Placeholder JWT secret. jwt.secret is committed in application.properties. It must match the secret used by service-auth and be injected from an environment variable or secret store.
 - Service URLs are hard-coded. docker-compose sets AUTH_SERVICE_URL, USER_SERVICE_URL and similar variables, but the routes in GatewayConfig and application.properties use fixed hostnames, so the variables currently have no effect.
 - Duplicate route definitions. The auth and user routes exist in both application.properties and the GatewayConfig Java DSL; keeping one source avoids confusion.
+- Rate limiting is not active. RateLimiterConfig defines a key resolver (by X-User-Id or client IP) but no route applies a
+RequestRateLimiter filter.
+
 
 
 
