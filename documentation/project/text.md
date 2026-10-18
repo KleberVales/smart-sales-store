@@ -33,6 +33,9 @@ Tokens are verified with the shared secret configured in jwt. secret (an HMAC ke
 
 <img width="1217" height="115" alt="Screenshot from 2026-10-18 18-06-40" src="https://github.com/user-attachments/assets/29f99742-ae5d-46d7-9a80-b7dd0ab48b81" />
 
+Public paths. Requests whose path starts with any of these skip JWT validation: /api/auth/login, /api/auth/register,
+
+
 
 
 
