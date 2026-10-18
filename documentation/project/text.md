@@ -53,6 +53,9 @@ The login request body above is illustrative; see the service-auth module for th
 
 ## 6. Configuration and deployment
 
+<img width="1213" height="277" alt="Screenshot from 2026-10-18 18-14-16" src="https://github.com/user-attachments/assets/d95aa80b-5630-4f85-9656-cb1735338e97" />
+
+
 
 
 
