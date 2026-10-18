@@ -24,5 +24,7 @@ Figure 1. Request path from client through the gateway filter chain to the downs
 
 Paths are forwarded unchanged (no prefix stripping), so GET /api/products/12 on the gateway reaches GET /api/products/12 on service-products. When a circuit opens or a call fails, the request is forwarded to the matching /fallback/* endpoint, which returns JSON of the form {"status": 503, "message": "... Service is currently unavailable", "timestamp": ...}.
 
+## 4. Authentication and security
+
 
 
