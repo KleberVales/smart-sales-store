@@ -39,6 +39,7 @@ Public paths. Requests whose path starts with any of these skip JWT validation: 
 
 ```bash
 # 1. Log in through the gateway (public route)
+curl -X POST http://localhost:8080/api/auth/login \
 
 
 
