@@ -64,6 +64,8 @@ Reviewing the source turned up a few items worth fixing before production use:
 - Duplicate route definitions. The auth and user routes exist in both application.properties and the GatewayConfig Java DSL; keeping one source avoids confusion.
 - Rate limiting is not active. RateLimiterConfig defines a key resolver (by X-User-Id or client IP) but no route applies a
 RequestRateLimiter filter.
+- Writes on customers and products are public. Prefix matching leaves every method on these paths unauthenticated, not just reads. Restrict by HTTP method or role if that is not intended.
+
 
 
 
