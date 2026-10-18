@@ -43,6 +43,10 @@ curl -X POST http://localhost:8080/api/auth/login \
 -H "Content-Type: application/json" \
 -d '{"username":"alice","password":"secret"}'
 
+# 2. Call a protected route with the returned token
+curl http://localhost:8080/api/users -H "Authorization: Bearer <token>"
+
+
 
 
 
