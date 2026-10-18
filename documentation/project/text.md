@@ -11,7 +11,8 @@ Responsibilities
 - Routing of /api/** paths to the auth, user, customers and products services.
 - Authentication: validates JWT bearer tokens and passes the caller's identity downstream.
 - Resilience: circuit breakers with fallback responses, plus retries on the auth route.
-
+- Cross-cutting concerns: CORS policy, Actuator health and route inspection endpoints.
+        
 
 
 
