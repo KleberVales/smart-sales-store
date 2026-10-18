@@ -14,5 +14,3 @@ store-automation/
 ├── config-server
 └── docker-compose
 
-
-
