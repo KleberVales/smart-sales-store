@@ -58,7 +58,8 @@ The login request body above is illustrative; see the service-auth module for th
 ## 7. Known gaps to address
 
 Reviewing the source turned up a few items worth fixing before production use:
-◦ Placeholder JWT secret. jwt.secret is committed in application.properties. It must match the secret used by service-auth and be injected from an environment variable or secret store.
+
+- Placeholder JWT secret. jwt.secret is committed in application.properties. It must match the secret used by service-auth and be injected from an environment variable or secret store.
 
 
 
