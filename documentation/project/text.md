@@ -15,6 +15,7 @@ The API Gateway is the single entry point to the Smart Sales Store backend. Clie
 
 <h2 style="color:blue;">## 2. Architecture</h2>
 
+## 🟢 Responsibilities
 
 
 
