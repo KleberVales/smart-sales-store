@@ -13,7 +13,7 @@ The API Gateway is the single entry point to the Smart Sales Store backend. Clie
 - Resilience: circuit breakers with fallback responses, plus retries on the auth route.
 - Cross-cutting concerns: CORS policy, Actuator health and route inspection endpoints.
 
-## 2. Architecture
+<h2 style="color:blue;">## 2. Architecture</h2>
 
 
 
