@@ -55,6 +55,12 @@ The login request body above is illustrative; see the service-auth module for th
 
 <img width="1213" height="277" alt="Screenshot from 2026-10-18 18-14-16" src="https://github.com/user-attachments/assets/d95aa80b-5630-4f85-9656-cb1735338e97" />
 
+## 7. Known gaps to address
+
+Reviewing the source turned up a few items worth fixing before production use:
+◦ Placeholder JWT secret. jwt.secret is committed in application.properties. It must match the secret used by service-auth and be injected from an environment variable or secret store.
+
+
 
 
 
