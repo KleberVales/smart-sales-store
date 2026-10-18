@@ -20,7 +20,7 @@ Figure 1. Request path from client through the gateway filter chain to the downs
 
 ## 3. Route table
 
-<img width="1928" height="852" alt="tt" src="https://github.com/user-attachments/assets/19d31411-6020-4fed-980b-65d97ecd96b8" />
+<img width="1219" height="173" alt="Screenshot from 2026-10-18 16-44-38" src="https://github.com/user-attachments/assets/877cf8b1-7176-418d-ac89-4a4dadcd7b67" />
 
 
 
