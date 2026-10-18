@@ -60,7 +60,7 @@ The login request body above is illustrative; see the service-auth module for th
 Reviewing the source turned up a few items worth fixing before production use:
 
 - Placeholder JWT secret. jwt.secret is committed in application.properties. It must match the secret used by service-auth and be injected from an environment variable or secret store.
-
+- Service URLs are hard-coded. docker-compose sets AUTH_SERVICE_URL, USER_SERVICE_URL and similar variables, but the routes in GatewayConfig and application.properties use fixed hostnames, so the variables currently have no effect.
 
 
 
