@@ -1,0 +1,141 @@
+
+services:
+  user-db:
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_DB: ${USER_DB_NAME}
+      POSTGRES_USER: ${USER_DB_USERNAME}
+      POSTGRES_PASSWORD: ${USER_DB_PASSWORD}
+    volumes:
+      - user_db_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U \"$${POSTGRES_USER}\" -d \"$${POSTGRES_DB}\""]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+    restart: unless-stopped
+    networks:
+      - smart-sales-net
+
+  service-user:
+    build:
+      context: ./service-user
+      dockerfile: Dockerfile
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:postgresql://user-db:5432/${USER_DB_NAME}
+      SPRING_DATASOURCE_USERNAME: ${USER_DB_USERNAME}
+      SPRING_DATASOURCE_PASSWORD: ${USER_DB_PASSWORD}
+      SPRING_JPA_HIBERNATE_DDL_AUTO: update
+    depends_on:
+      user-db:
+        condition: service_healthy
+    restart: unless-stopped
+    networks:
+      - smart-sales-net
+
+  service-auth:
+    build:
+      context: ./service-auth
+      dockerfile: Dockerfile
+    environment:
+      SERVICE_USER_URL: http://service-user:8082
+    depends_on:
+      - service-user
+    restart: unless-stopped
+    networks:
+      - smart-sales-net
+
+  customers-db:
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_DB: ${CUSTOMERS_DB_NAME}
+      POSTGRES_USER: ${CUSTOMERS_DB_USERNAME}
+      POSTGRES_PASSWORD: ${CUSTOMERS_DB_PASSWORD}
+    volumes:
+      - customers_db_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U \"$${POSTGRES_USER}\" -d \"$${POSTGRES_DB}\""]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+    restart: unless-stopped
+    networks:
+      - smart-sales-net
+
+  service-customers:
+    build:
+      context: ./service-customers
+      dockerfile: Dockerfile
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:postgresql://customers-db:5432/${CUSTOMERS_DB_NAME}
+      SPRING_DATASOURCE_USERNAME: ${CUSTOMERS_DB_USERNAME}
+      SPRING_DATASOURCE_PASSWORD: ${CUSTOMERS_DB_PASSWORD}
+      SPRING_JPA_HIBERNATE_DDL_AUTO: update
+    depends_on:
+      customers-db:
+        condition: service_healthy
+    restart: unless-stopped
+    networks:
+      - smart-sales-net
+
+  product-db:
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_DB: ${PRODUCT_DB_NAME}
+      POSTGRES_USER: ${PRODUCT_DB_USERNAME}
+      POSTGRES_PASSWORD: ${PRODUCT_DB_PASSWORD}
+    volumes:
+      - product_db_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U \"$${POSTGRES_USER}\" -d \"$${POSTGRES_DB}\""]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+    restart: unless-stopped
+    networks:
+      - smart-sales-net
+
+  service-products:
+    build:
+      context: ./service-products
+      dockerfile: Dockerfile
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:postgresql://product-db:5432/${PRODUCT_DB_NAME}
+      DB_USERNAME: ${PRODUCT_DB_USERNAME}
+      DB_PASSWORD: ${PRODUCT_DB_PASSWORD}
+      SPRING_JPA_HIBERNATE_DDL_AUTO: update
+    depends_on:
+      product-db:
+        condition: service_healthy
+    restart: unless-stopped
+    networks:
+      - smart-sales-net
+
+  api-gateway:
+    build:
+      context: ./api-gateway
+      dockerfile: Dockerfile
+    ports:
+      - "8080:8080"
+    environment:
+      AUTH_SERVICE_URL: http://service-auth:8081
+      USER_SERVICE_URL: http://service-user:8082
+      CUSTOMERS_SERVICE_URL: http://service-customers:8083
+      PRODUCTS_SERVICE_URL: http://service-products:8084
+    depends_on:
+      - service-auth
+      - service-user
+      - service-customers
+      - service-products
+    restart: unless-stopped
+    networks:
+      - smart-sales-net
+
+networks:
+  smart-sales-net:
+    driver: bridge
+
+volumes:
+  user_db_data:
+  customers_db_data:
+  product_db_data:
