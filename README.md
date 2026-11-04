@@ -370,5 +370,5 @@ LinkedIn: www.linkedin.com/in/kleber-vales
 🏆 **Oracle Certified Associate – Java SE 7 Programmer**  
 🏆 **Microsoft MTA – Software Development Fundamentals**  
 🏆 **Scrum Fundamentals Certified (SFC™)**  
-🏆 **Agentic AI Certified Fundations Associate**  
+🏆 **Agentic AI Certified Foundations Associate**  
 🏆 **OCI AI Foundations Associate**
