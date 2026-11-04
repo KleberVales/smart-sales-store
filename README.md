@@ -358,10 +358,13 @@ LinkedIn: www.linkedin.com/in/kleber-vales
 
 | Cloud | DevOps | Architectures | Generative AI | Methodologies |
 
-🎓 **Bachelor's Degree in Computer Science**  
-🎓 **MBA in Web Software Development**
+### 🎓 Education
 
-**Certifications**  
+**Bachelor's Degree in Computer Science**  
+**MBA in Web Software Development**
+
+### Certifications
+
 🏆 **Oracle Certified Associate – Java SE 7 Programmer**  
 🏆 **Microsoft MTA – Software Development Fundamentals**  
 🏆 **Scrum Fundamentals Certified (SFC™)**  
