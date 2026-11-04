@@ -349,8 +349,6 @@ The main areas of study include:
 
 ---
 
-### ✉️ Contact
-
 Email: klebervales.dev@gmail.com  
 LinkedIn: www.linkedin.com/in/kleber-vales
 
