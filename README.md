@@ -349,10 +349,10 @@ The main areas of study include:
 
 ---
 
+### Kleber Vales
+
 Email: klebervales.dev@gmail.com  
 LinkedIn: www.linkedin.com/in/kleber-vales
-
-### Kleber Vales
 
 **Java & Spring Software Engineer**
 
